@@ -1,15 +1,19 @@
 import React from 'react'
 
 interface props{
-    user:string
+  user: string
+  role : string
 }
 
 
-export const Child = ({user}:props) => {
+export const Child = ({user,role}:props) => {
   return (
     <>
           <div>Parent</div>
-          <div>{user}</div>
+      <div>{user}</div>
+      <br />
+      <br />
+      {role}
     </>
   );
 }

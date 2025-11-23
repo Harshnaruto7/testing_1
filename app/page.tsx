@@ -1,4 +1,5 @@
 "use client"
+import Link from "next/link";
 
 import React, { useEffect, useState,useContext } from "react";
 
@@ -54,12 +55,14 @@ export default function Home() {
     const { count, increase } = useContext(AppContext);
 
 
+   const dataNew = {user:"Harsh",role:"Admin"};
 
 
 
   return (
-    <div className="  items-center py-10">
-      <div className="flex col-auto gap-2">
+    <div className=" flex flex-col gap-2 items-center py-10">
+      <div className="">
+        {/* counter */}
         <h1>Home</h1>
         <h1>Count</h1>
         <p>{value}</p>
@@ -77,8 +80,11 @@ export default function Home() {
         </button>
       </div>
 
+      {/* props */}
+
       <div className="flex gap-2 flex-col">
-        <Child user={"Harsh,Hello there."} />
+        {/* <Child user={dataNew.user} role={dataNew.role} /> */}
+        <Child {...dataNew} />
       </div>
 
       <div className="flex gap-2 flex-col">
@@ -96,6 +102,13 @@ export default function Home() {
             Increase
           </button>
         </div>
+      </div>
+      <div className="py-4">
+
+        <button className="bg-white text-lg font-bold text-blue-500 ">
+          <Link href="/learning-1">Learning-1</Link>
+        </button>
+        
       </div>
     </div>
   );
